@@ -76,6 +76,10 @@ section {
             }
           }
           .reply-container {
+            &:hover {
+              opacity: 0.5;
+              transition: 0.2s;
+            }
             display: flex;
             justify-content: center;
             align-items: center;
@@ -96,6 +100,10 @@ section {
             align-items: center;
             gap: 16px;
             .delete-edit {
+              &:hover {
+                opacity: 0.5;
+                transition: 0.2s;
+              }
               display: flex;
               justify-content: center;
               align-items: center;
@@ -124,7 +132,7 @@ section {
         border-radius: 10px;
         display: flex;
         align-self: flex-start;
-        .intercation-container {
+        .interaction-container {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -182,6 +190,9 @@ section {
       height: 44px;
     }
     .textarea {
+      &:active {
+        border: hsl(238, 40%, 52%);
+      }
       &::placeholder {
         font-family: Rubik;
         color: hsl(211, 10%, 45%);
@@ -194,6 +205,10 @@ section {
       padding: 8px 10px 8px 10px;
     }
     button {
+      &:hover {
+        opacity: 0.5;
+        transition: 0.2s;
+      }
       font-family: Rubik;
       font-weight: 500;
       color: white;
@@ -223,6 +238,14 @@ span {
   border: 1.5px solid hsl(240, 1%, 84%);
   padding: 25px;
   background-color: white;
+}
+
+.when__reply {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 
