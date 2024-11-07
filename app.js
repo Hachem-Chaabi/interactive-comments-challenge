@@ -14,7 +14,6 @@ let downVoteBtn;
 
 // Sort
 const sortComments = () => {
-  const backup = data.comments;
   data.comments.sort((a, b) => b.score - a.score);
 };
 sortComments();
@@ -25,19 +24,6 @@ const sortReplies = () => {
   });
 };
 sortReplies();
-
-// Remove last element from NODELIST
-const removeLastElement = node => {
-  let arr = [];
-  let i = 0;
-
-  while(node.length > 4 && i < 4) {
-    arr[arr.length] = node[i];
-    i++;
-  };
-
-  return arr;
-};
 
 // Get the last comment ID from the data
 const getLastId = () => {
@@ -125,6 +111,9 @@ const downVote = (downVoteBtn) => {
 // Display the new comment when clicking on the SEND btn
 const displayComment = (lastComment) => {
   const textarea = document.getElementById('add-comment');
+
+  if (textarea.value == '') return;
+
   const html = `<div class="new when__reply">
   <div class="comment principal-comment-container" data-num="${lastComment.id}">
     <div class="comment-container-content">
@@ -233,7 +222,7 @@ const initReplies = () => {
                       </div>
                       <div class="text-container">
                         <p>
-                          <span>@${reply.replyingTo}</span> ${reply.content}
+                          <span class="tag-name">@${reply.replyingTo}</span> <span class="comment__content">${reply.content}</span>
                         </p>
                       </div>
                     </div>
@@ -284,7 +273,7 @@ const initReplies = () => {
                         </div>
                         <div class="text-container">
                           <p>
-                            <span>@${reply.replyingTo}</span> ${reply.content}
+                            <span class="tag-name">@${reply.replyingTo}</span> <span class="comment__content">${reply.content}</span>
                           </p>
                         </div>
                       </div>
@@ -412,16 +401,19 @@ const editComment = (editBtn) => {
       const updateBtn = commentContainer.querySelector('.btn-update');
       const sectionId = commentContainer.closest('.comment');
       updateBtn.addEventListener('click', () => {
+        
+        // For the comments
         data.comments.forEach( comment => {
           if (comment.id == sectionId.dataset.num) {
             comment.content = updateSection.querySelector('.update-textarea').value;
             textContent.textContent = comment.content;
           }
 
+          // For the replies
           comment.replies.forEach( reply => {
             if (reply.id == sectionId.dataset.num) {
               reply.content = updateSection.querySelector('.update-textarea').value;
-              textContent.textContent = reply.content;
+              commentContainer.querySelector('.comment__content').textContent = deleteUserTag(reply.content);
             }
           });
         });
@@ -590,7 +582,7 @@ const addReply = (container, content, Id) => {
                               </div>
                               <div class="text-container">
                                 <p>
-                                   <span>@${reply.replyingTo}</span> ${reply.content}
+                                   <span class="tag-name">@${reply.replyingTo}</span> <span class="comment__content">${reply.content}</span>
                                 </p>
                               </div>
                             </div>

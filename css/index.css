@@ -7,6 +7,7 @@
 
 html {
   height: 100%;
+  overflow-y: scroll;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
   background-color: rgb(244, 243, 243);
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 ul {
@@ -243,7 +244,7 @@ section .add__comment-container button:hover {
   transition: 0.2s;
 }
 
-span {
+.tag-name {
   color: hsl(238, 40%, 52%);
   font-weight: 500;
 }
