@@ -187,6 +187,7 @@ section {
     align-items: center;
     justify-content: flex-end;
     gap: 54px;
+    width: 100%;
     hr {
       border: 1px solid hsl(0, 0%, 87%);
       border-radius: 100%;
@@ -199,6 +200,7 @@ section {
       justify-content: flex-end;
       gap: 20px;
       max-width: 85%;
+      width: 100%;
       .reply {
         display: flex;
       }

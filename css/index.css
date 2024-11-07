@@ -178,6 +178,7 @@ section .replies-comment-container {
   align-items: center;
   justify-content: flex-end;
   gap: 54px;
+  width: 100%;
 }
 section .replies-comment-container hr {
   border: 1px solid hsl(0, 0%, 87%);
@@ -191,6 +192,7 @@ section .replies-comment-container .replies {
   justify-content: flex-end;
   gap: 20px;
   max-width: 85%;
+  width: 100%;
 }
 section .replies-comment-container .replies .reply {
   display: flex;
