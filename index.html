@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <link rel="stylesheet" href="css/index.css">
     <link
       rel="icon"
       type="image/png"
@@ -13,9 +14,20 @@
     />
 
     <title>Interactive comments section</title>
-
   </head>
-  <body>
+  <body class="body">
     <!-- Pull dynamic content from the data.json file -->
+    <section class="section">
+      <div class="comments__container">
+         <!-- REPLIES -->
+      </div>
+       <!-- ADD COMMENT -->
+        <div class="add__comment-container">
+          <img src="images/avatars/image-juliusomo.webp" alt="student wearing glasses">
+          <textarea class="textarea-comment" placeholder='Add a comment...' name="add-comment" id="add-comment"></textarea>
+          <button class="btn-send">SEND</button>
+        </div>
+    </section>
+    <script src="app.js" type="module"></script>
   </body>
 </html>

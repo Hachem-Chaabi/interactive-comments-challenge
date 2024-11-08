@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-purgecss": "^6.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.80.5"
+  }
+}

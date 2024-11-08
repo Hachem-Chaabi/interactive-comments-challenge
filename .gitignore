@@ -14,3 +14,6 @@
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
 .prettierignore
+./Users/macmini/Desktop/interactive-comments-section-main/css
+./Users/macmini/Desktop/interactive-comments-section-main/node_modules
+.prettierrc
